@@ -5,7 +5,6 @@ import { OneMovieDetail } from '../components/services/GetMoive';
 const MovieDetailPage = () => {
   const { movieId } = useParams();
   const [detailMovie, setDetailMovie] = useState([]);
-  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
     OneMovieDetail(movieId)
