@@ -11,7 +11,7 @@ export const InfoCast = () => {
     getActorsDetail(movieId)
       .then(resp => resp.json())
       .then(detail => setActorDetail(detail.cast));
-  }, []);
+  }, [movieId]);
 
   return <InfoCastList detail={actorDetail} />;
 };

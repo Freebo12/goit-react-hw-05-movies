@@ -5,11 +5,14 @@ import { OneMovieDetail } from '../components/services/GetMoive';
 const MovieDetailPage = () => {
   const { movieId } = useParams();
   const [detailMovie, setDetailMovie] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
     OneMovieDetail(movieId)
       .then(resp => resp.json())
-      .then(movie => setDetailMovie(movie));
+      .then(movie => {
+        setDetailMovie(movie);
+      });
   }, [movieId]);
   return (
     <>

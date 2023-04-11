@@ -12,7 +12,7 @@ export const InfoReview = () => {
       .then(resp => resp.json())
       .then(opinion => setOpinion(opinion.results))
       .catch(error => console.log(error));
-  }, []);
+  }, [movieId]);
 
   return <InfoReviewList reviews={opinion} />;
 };
