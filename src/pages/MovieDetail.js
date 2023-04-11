@@ -10,7 +10,7 @@ const MovieDetailPage = () => {
     OneMovieDetail(movieId)
       .then(resp => resp.json())
       .then(movie => setDetailMovie(movie));
-  }, []);
+  }, [movieId]);
   return (
     <>
       <Link to={`/`}>back</Link>
@@ -37,7 +37,6 @@ const MovieDetailPage = () => {
           />
         </div>
       </div>
-      <h1></h1>
       <ul>
         <li>
           <Link to="Cast">Cast</Link>
