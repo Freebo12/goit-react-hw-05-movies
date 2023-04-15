@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { GetTopMovie } from 'components/services/GetMoive';
 import { HomePageList } from 'components/HomePageItems/HomePageList';
+import styled from 'styled-components';
+
+const HomeTitle = styled.h1`
+  color: orange;
+  font-weight: 900;
+`;
 
 const Home = () => {
   const [topFilm, setTopFilm] = useState([]);
@@ -13,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Top Films</h1>
+      <HomeTitle>Top Films</HomeTitle>
       <HomePageList films={topFilm} />
     </>
   );

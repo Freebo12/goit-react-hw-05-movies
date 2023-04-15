@@ -3,6 +3,7 @@ import { lazy } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Layout } from './Layout';
 import { GlobalStyle } from './GlobalStyle/GlobalStyle';
+import { NotFound } from './NotFound/NotFound';
 
 const Home = lazy(() => import('../pages/Home'));
 const PageMovie = lazy(() => import('../pages/Movies'));
@@ -35,6 +36,7 @@ export const App = () => {
             <Route path="cast" element={<InfoCast />} />
             <Route path="reviews" element={<InfoReview />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
