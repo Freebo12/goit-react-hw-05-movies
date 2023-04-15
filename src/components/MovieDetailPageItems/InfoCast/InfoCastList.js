@@ -1,28 +1,35 @@
-import PropTypes from 'prop-types';
+import {
+  ListActors,
+  BoxAactors,
+  ActorName,
+  Character,
+} from './InfoCast.styled';
+import NotFound from 'img/NotFound.jpg';
 
 export const InfoCastList = ({ detail }) => {
-  return (
-    <ul>
-      {detail.map(actor => (
-        <li key={actor.id}>
-          <span>{actor.name}</span>
-          <img
-            src={
-              actor.profile_path !== null
-                ? `https://image.tmdb.org/t/p/original/${actor.profile_path}`
-                : `zagluszka`
-            }
-            alt={actor.name}
-            width="75px"
-            height="100px"
-          />
-          <span>{actor.character}</span>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-InfoCastList.propTypes = {
-  detail: PropTypes.array.isRequired,
+  if (detail !== undefined) {
+    return (
+      <ListActors>
+        {detail.map(actor => (
+          <li key={actor.id}>
+            <BoxAactors>
+              <ActorName>{actor.name}</ActorName>
+              <img
+                src={
+                  actor.profile_path !== null
+                    ? `https://image.tmdb.org/t/p/original/${actor.profile_path}`
+                    : NotFound
+                }
+                alt={actor.name}
+                width="150px"
+                height="200px"
+              />
+              <Character>Character:{actor.character}</Character>
+            </BoxAactors>
+          </li>
+        ))}
+      </ListActors>
+    );
+  }
+  return <p>Actors not Found...</p>;
 };

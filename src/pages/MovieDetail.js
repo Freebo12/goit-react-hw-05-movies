@@ -25,7 +25,6 @@ const MovieDetailPage = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-      ;
     </>
   );
 };

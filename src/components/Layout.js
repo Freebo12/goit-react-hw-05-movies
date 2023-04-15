@@ -32,7 +32,7 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <Footer></Footer>
+      <footer></footer>
     </div>
   );
 };

@@ -68,3 +68,43 @@ export const BtnBack = styled.button`
     top: 2px;
   }
 `;
+
+export const FilmTitle = styled.h2`
+  color: rgb(255, 151, 0);
+`;
+
+export const SubTitle = styled.h3`
+  color: rgb(255, 151, 0);
+`;
+
+export const Paragraph = styled.p`
+  color: white;
+`;
+
+export const ListGenres = styled.ul`
+  list-style-position: inside;
+  column-count: 1;
+  list-style-type: decimal;
+  height: 200px;
+  padding-left: 170px;
+`;
+
+export const ListGenresItem = styled.li`
+  border-radius: 4px;
+  width: 400px;
+  position: relative;
+  display: block;
+  margin-bottom: 0.25rem;
+  padding: 0.325rem 0.825rem 0.325rem 1.325rem;
+  color: #fff;
+  background: #ff8c00;
+  :before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.5rem;
+    background: white;
+  }
+`;

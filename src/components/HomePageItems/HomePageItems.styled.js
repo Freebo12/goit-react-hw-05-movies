@@ -9,6 +9,7 @@ export const TrendList = styled.ul`
 `;
 
 export const TrendListItem = styled.li`
+  border-radius: 4px;
   width: 400px;
   position: relative;
   display: block;

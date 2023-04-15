@@ -1,8 +1,19 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { BtnBack, FilmCardBox, ImageBox } from './FilmCard.styled';
+import {
+  BtnBack,
+  FilmCardBox,
+  ImageBox,
+  FilmTitle,
+  SubTitle,
+  Paragraph,
+  ListGenresItem,
+  ListGenres,
+} from './FilmCard.styled';
+
 import styled from 'styled-components';
+import NoFound from 'img/Image_not_available.png';
 
 const StyledLink = styled(NavLink)`
   color: white;
@@ -22,13 +33,14 @@ export const FilmCard = ({ detailMovie }) => {
       <ImageBox>
         <img
           src={
-            detailMovie.poster_path !== null
+            detailMovie.poster_path !== null &&
+            detailMovie.poster_path !== undefined
               ? `https://image.tmdb.org/t/p/original/${detailMovie.poster_path}`
-              : ``
+              : `${NoFound}`
           }
           alt={detailMovie.id}
           width="500px"
-          height="500px"
+          height="auto"
         />
         <BtnBack>
           <StyledLink to={backLinkLocationRef.current}>back</StyledLink>
@@ -36,22 +48,21 @@ export const FilmCard = ({ detailMovie }) => {
       </ImageBox>
 
       <div>
-        <div>
-          <h2>
-            {detailMovie.title}({detailMovie.release_date})
-          </h2>
-          <span>User Score:{detailMovie.vote_average} %</span>
-          <h3>Overview</h3>
-          <span>{detailMovie.overview}</span>
-          <h3>Genres</h3>
-          {detailMovie.genres !== undefined && (
-            <ul>
-              {detailMovie.genres.map(genres => (
-                <li key={genres.id}>{genres.name}</li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <FilmTitle>
+          {detailMovie.title}({detailMovie.release_date})
+        </FilmTitle>
+        <SubTitle>User Score</SubTitle>
+        <Paragraph>{detailMovie.vote_average}%</Paragraph>
+        <SubTitle>Overview</SubTitle>
+        <Paragraph>{detailMovie.overview}</Paragraph>
+        <SubTitle>Genres</SubTitle>
+        {detailMovie.genres !== undefined && (
+          <ListGenres>
+            {detailMovie.genres.map(genres => (
+              <ListGenresItem key={genres.id}>{genres.name}</ListGenresItem>
+            ))}
+          </ListGenres>
+        )}
       </div>
     </FilmCardBox>
   );

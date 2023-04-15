@@ -1,18 +1,17 @@
-import PropTypes from 'prop-types';
+import { ReviewTitle, ReviewParagraph } from './InfoReview.styled';
 
 export const InfoReviewList = ({ reviews }) => {
-  return (
-    <ul>
-      {reviews.map(review => (
-        <li key={review.id}>
-          <h3>{review.author}</h3>
-          <span>{review.content}</span>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-InfoReviewList.propTypes = {
-  reviews: PropTypes.array.isRequired,
+  if (reviews !== undefined) {
+    return (
+      <ul>
+        {reviews.map(review => (
+          <li key={review.id}>
+            <ReviewTitle>{review.author}</ReviewTitle>
+            <ReviewParagraph>{review.content}</ReviewParagraph>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return <p>We don't have any reviews for this video</p>;
 };

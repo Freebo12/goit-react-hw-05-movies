@@ -1,39 +1,11 @@
 import styled from '@emotion/styled';
 
-export const MovieList = styled.ul`
-  list-style-position: inside;
-  column-count: 2;
-  list-style-type: decimal;
-  height: 200px;
-  padding-left: 120px;
-`;
-
-export const MovieListItem = styled.li`
-  border-radius: 4px;
-  width: 400px;
-  position: relative;
-  display: block;
-  margin-bottom: 0.25rem;
-  padding: 0.325rem 0.825rem 0.325rem 1.325rem;
-  color: #fff;
-  background: #ff8c00;
-  :before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 0.5rem;
-    background: black;
-  }
-`;
-
-export const BtnSearch = styled.button`
+export const BtnSub = styled.button`
   text-align: center;
 
   margin-right: 40px;
   width: 130px;
-  height: 40px;
+  height: 30px;
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
@@ -85,29 +57,4 @@ export const BtnSearch = styled.button`
   :active {
     top: 2px;
   }
-`;
-
-export const InputStyled = styled.input`
-  width: 20%;
-  height: 38px;
-  border: 0;
-  border-bottom: 2px solid gray;
-  outline: 0;
-  font-size: 1.4rem;
-  color: orange;
-  padding: 2px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  */ ::placeholder {
-    color: transparent;
-  }
-
-  :focus {
-    transition: 0.2s;
-    font-size: 1rem;
-
-    font-weight: 600;
-    border-bottom: 2px solid orange;
-  }
-  margin-right: 10px;
 `;
