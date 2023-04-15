@@ -1,42 +1,30 @@
 import { SearchMovie } from '../components/services/GetMoive';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { MovieSearchList } from 'components/MoviePageItems/MovieSearchList';
+import { useSearchParams } from 'react-router-dom';
+import { SearchBar } from 'components/MoviePageItems/SearchBar';
 
 const PageMovie = () => {
-  const [textSearch, setTextSearch] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [ArrayFilm, setArrayFilm] = useState([]);
+  const query = searchParams.get('query' ?? '');
 
-
-
-  const handleChange = ({ target: { value } }) => {
-    setTextSearch(value);
+  const handleSubmit = searchQuery => {
+    setSearchParams(searchQuery === '' ? {} : { query: searchQuery });
   };
 
-  const hadleSubmit = evt => {
-    evt.preventDefault();
-
-    if (textSearch !== '') {
-      setTextSearch(textSearch);
-      setTextSearch('');
-      SearchMovie(textSearch)
+  useEffect(() => {
+    if (query !== null) {
+      SearchMovie(query)
         .then(resp => resp.json())
         .then(film => setArrayFilm([...film.results]));
-    } else {
-      return console.log('Write something Toast');
     }
-  };
+  }, [query]);
 
   return (
     <>
-      <form role="search" onSubmit={hadleSubmit}>
-        <input
-          type="search"
-          placeholder="Search"
-          value={textSearch}
-          onChange={handleChange}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <SearchBar onSubmit={handleSubmit} />
       {!ArrayFilm !== [] && <MovieSearchList films={ArrayFilm} />}
     </>
   );

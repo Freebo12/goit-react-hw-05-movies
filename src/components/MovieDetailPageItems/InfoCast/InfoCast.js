@@ -3,7 +3,7 @@ import { getActorsDetail } from '../../services/GetMoive';
 import { useEffect, useState } from 'react';
 import { InfoCastList } from './InfoCastList';
 
-export const InfoCast = () => {
+const InfoCast = () => {
   const { movieId } = useParams();
   const [actorDetail, setActorDetail] = useState([]);
 
@@ -15,3 +15,5 @@ export const InfoCast = () => {
 
   return <InfoCastList detail={actorDetail} />;
 };
+
+export default InfoCast;

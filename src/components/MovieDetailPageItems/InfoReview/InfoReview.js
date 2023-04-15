@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getViewsFilm } from '../../services/GetMoive';
 import { InfoReviewList } from './InfoReviewList';
 
-export const InfoReview = () => {
+const InfoReview = () => {
   const [opinion, setOpinion] = useState([]);
   const { movieId } = useParams();
 
@@ -16,3 +16,5 @@ export const InfoReview = () => {
 
   return <InfoReviewList reviews={opinion} />;
 };
+
+export default InfoReview;

@@ -1,10 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { useEffect, useState, Suspense } from 'react';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { OneMovieDetail } from '../components/services/GetMoive';
+import { FilmCard } from 'components/MovieDetailPageItems/FilmCard/FilmCard';
+import { SubList } from 'components/MovieDetailPageItems/SubList/SubList';
 
 const MovieDetailPage = () => {
   const { movieId } = useParams();
-  const [detailMovie, setDetailMovie] = useState([]);
+  const [detailMovie, setDetailMovie] = useState({});
+
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     OneMovieDetail(movieId)
@@ -13,41 +18,15 @@ const MovieDetailPage = () => {
         setDetailMovie(movie);
       });
   }, [movieId]);
+
   return (
     <>
-      <Link to={`/`}>back</Link>
-      <div>
-        <div>
-          <h2>
-            {detailMovie.title}({detailMovie.release_date})
-          </h2>
-          <span>User Score:{detailMovie.vote_average} %</span>
-          <h3>Overview</h3>
-          <span>{detailMovie.overview}</span>
-          <h3>Genres</h3>
-        </div>
-        <div>
-          <img
-            src={
-              detailMovie.poster_path !== null
-                ? `https://image.tmdb.org/t/p/original/${detailMovie.poster_path}`
-                : ``
-            }
-            alt={detailMovie.id}
-            width="250px"
-            height="250px"
-          />
-        </div>
-      </div>
-      <ul>
-        <li>
-          <Link to="Cast">Cast</Link>
-        </li>
-        <li>
-          <Link to="Reviews">Review</Link>
-        </li>
-      </ul>
-      <Outlet />
+      <FilmCard detailMovie={detailMovie} />
+      <SubList />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
+      ;
     </>
   );
 };

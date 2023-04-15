@@ -1,18 +1,32 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { TrendListItem, TrendList } from './HomePageList.styled';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: white;
+  width: 130px;
+  height: 40px;
+  font-weight: 700;
+  :hover {
+    color: black;
+  }
+`;
 
 export const HomePageList = ({ films }) => {
   return (
-    <ul>
+    <TrendList>
       {films.map(film => (
-        <Link to={`movies/${film.id}`} key={film.id}>
-          <li>
-            {film.title}
-            {film.name}
-          </li>
-        </Link>
+        <TrendListItem key={film.id}>
+          <StyledLink to={`movies/${film.id}`}>
+            <span>
+              {film.title}
+              {film.name}
+            </span>
+          </StyledLink>
+        </TrendListItem>
       ))}
-    </ul>
+    </TrendList>
   );
 };
 
