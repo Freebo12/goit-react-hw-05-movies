@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
+import { BoxSearch, BtnSearch, InputStyled } from './MoviePageItems.styled';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -19,15 +20,17 @@ export const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <form role="search" onSubmit={handleSubmit}>
-      <input
-        type="search"
-        placeholder="Search"
-        value={query}
-        onChange={handleChange}
-      />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <form role="search" onSubmit={handleSubmit}>
+        <InputStyled
+          type="search"
+          placeholder="Search"
+          value={query}
+          onChange={handleChange}
+        />
+        <BtnSearch type="submit">Search</BtnSearch>
+      </form>
+    </>
   );
 };
 

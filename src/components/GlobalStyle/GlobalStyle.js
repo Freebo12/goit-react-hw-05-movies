@@ -30,8 +30,9 @@ body {
 
 img {  
   display: block;
-  max-width: 100%;
-  height: auto;
+  width:500px;
+  height: auto; 
+  border-radius: 10px;
 }
 
 ul {

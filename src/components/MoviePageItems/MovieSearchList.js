@@ -1,17 +1,35 @@
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { MovieList, MovieListItem } from './MoviePageItems.styled';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: white;
+  width: 130px;
+  height: 40px;
+  font-weight: 700;
+  :hover {
+    color: black;
+  }
+`;
 
 export const MovieSearchList = ({ films }) => {
   const location = useLocation();
 
   return (
-    <ul>
+    <MovieList>
       {films.map(film => (
-        <Link key={film.id} to={`${film.id}`} state={{ from: location }}>
-          <li key={film.id}>{film.title}</li>
-        </Link>
+        <MovieListItem key={film.id}>
+          <StyledLink
+            key={film.id}
+            to={`${film.id}`}
+            state={{ from: location }}
+          >
+            <span>{film.title}</span>
+          </StyledLink>
+        </MovieListItem>
       ))}
-    </ul>
+    </MovieList>
   );
 };
 

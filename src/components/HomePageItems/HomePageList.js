@@ -1,6 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { TrendListItem, TrendList } from './HomePageList.styled';
+import { TrendListItem, TrendList } from './HomePageItems.styled';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`

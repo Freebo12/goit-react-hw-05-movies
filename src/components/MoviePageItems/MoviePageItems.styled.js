@@ -1,6 +1,33 @@
 import styled from '@emotion/styled';
 
-export const NavBtn = styled.button`
+export const MovieList = styled.ul`
+  list-style-position: inside;
+  column-count: 2;
+  list-style-type: decimal;
+  height: 200px;
+  padding-left: 120px;
+`;
+
+export const MovieListItem = styled.li`
+  width: 400px;
+  position: relative;
+  display: block;
+  margin-bottom: 0.25rem;
+  padding: 0.325rem 0.825rem 0.325rem 1.325rem;
+  color: #fff;
+  background: #ff8c00;
+  :before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.5rem;
+    background: black;
+  }
+`;
+
+export const BtnSearch = styled.button`
   text-align: center;
 
   margin-right: 40px;
@@ -59,31 +86,27 @@ export const NavBtn = styled.button`
   }
 `;
 
-export const Header = styled.header`
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 5em;
-  padding: 2em 10%;
-  background: linear-gradient(90deg, #121212, #333333, #525252);
+export const InputStyled = styled.input`
+  width: 20%;
+  height: 38px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.4rem;
+  color: black;
+  padding: 2px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  */ ::placeholder {
+    color: transparent;
+  }
 
-  color: #fff;
-  display: block;
-  margin-bottom: 10px;
-`;
+  :focus {
+    transition: 0.2s;
+    font-size: 1rem;
 
-export const Footer = styled.footer`
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 5em;
-  padding: 2em 10%;
-  background: linear-gradient(90deg, #121212, #333333, #525252);
-  color: #fff;
-  display: block;
-  padding: 1em;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #333;
-  color: white;
+    font-weight: 600;
+    border-bottom: 2px solid orange;
+  }
+  margin-right: 10px;
 `;

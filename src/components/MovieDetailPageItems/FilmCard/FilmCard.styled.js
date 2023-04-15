@@ -1,21 +1,31 @@
 import styled from '@emotion/styled';
 
-export const NavBtn = styled.button`
-  text-align: center;
+export const FilmCardBox = styled.div`
+  display: flex;
+`;
 
-  margin-right: 40px;
+export const ImageBox = styled.div`
+  position: relative;
+  width: 50%;
+`;
+
+export const BtnBack = styled.button`
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
   width: 130px;
   height: 40px;
   color: #fff;
   border-radius: 5px;
-  padding: 10px 25px;
+  padding: 5px 10px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
@@ -57,33 +67,4 @@ export const NavBtn = styled.button`
   :active {
     top: 2px;
   }
-`;
-
-export const Header = styled.header`
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 5em;
-  padding: 2em 10%;
-  background: linear-gradient(90deg, #121212, #333333, #525252);
-
-  color: #fff;
-  display: block;
-  margin-bottom: 10px;
-`;
-
-export const Footer = styled.footer`
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 5em;
-  padding: 2em 10%;
-  background: linear-gradient(90deg, #121212, #333333, #525252);
-  color: #fff;
-  display: block;
-  padding: 1em;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #333;
-  color: white;
 `;
