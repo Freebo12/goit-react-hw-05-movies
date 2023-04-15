@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
-import { BoxSearch, BtnSearch, InputStyled } from './MoviePageItems.styled';
+import { BtnSearch, InputStyled } from './MoviePageItems.styled';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');

@@ -9,7 +9,6 @@ const MovieDetailPage = () => {
   const [detailMovie, setDetailMovie] = useState({});
 
   const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     OneMovieDetail(movieId)
