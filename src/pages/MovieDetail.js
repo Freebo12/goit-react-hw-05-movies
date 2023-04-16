@@ -8,8 +8,6 @@ const MovieDetailPage = () => {
   const { movieId } = useParams();
   const [detailMovie, setDetailMovie] = useState({});
 
-  const location = useLocation();
-
   useEffect(() => {
     OneMovieDetail(movieId)
       .then(resp => resp.json())

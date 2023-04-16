@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { Suspense } from 'react';
-import { Header, NavBtn, Footer } from './Layout.styled';
+import { Header, NavBtn } from './Layout.styled';
 
 const StyledLink = styled(NavLink)`
   color: grey;
