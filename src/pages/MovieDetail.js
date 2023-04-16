@@ -1,5 +1,5 @@
 import { useEffect, useState, Suspense } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { OneMovieDetail } from '../components/services/GetMoive';
 import { FilmCard } from 'components/MovieDetailPageItems/FilmCard/FilmCard';
 import { SubList } from 'components/MovieDetailPageItems/SubList/SubList';

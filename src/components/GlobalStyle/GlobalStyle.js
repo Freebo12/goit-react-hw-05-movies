@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-// import Background from 'img/Background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -18,7 +17,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  /* background-image:url(${Background}); */
+ 
    background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
