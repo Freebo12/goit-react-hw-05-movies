@@ -1,4 +1,8 @@
-import { ReviewTitle, ReviewParagraph } from './InfoReview.styled';
+import {
+  ReviewTitle,
+  ReviewParagraph,
+  ReviewsNotFound,
+} from './InfoReview.styled';
 
 export const InfoReviewList = ({ reviews }) => {
   if (reviews !== undefined) {
@@ -13,5 +17,7 @@ export const InfoReviewList = ({ reviews }) => {
       </ul>
     );
   }
-  return <p>We don't have any reviews for this video</p>;
+  return (
+    <ReviewsNotFound>We don't have any reviews for this video</ReviewsNotFound>
+  );
 };

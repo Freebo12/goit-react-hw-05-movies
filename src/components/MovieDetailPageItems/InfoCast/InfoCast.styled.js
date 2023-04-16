@@ -20,3 +20,7 @@ export const ActorName = styled.p`
 export const Character = styled.p`
   color: orange;
 `;
+
+export const ActorsNotFound = styled.p`
+  color: orange;
+`;

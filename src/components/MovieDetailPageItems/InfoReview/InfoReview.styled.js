@@ -8,3 +8,7 @@ export const ReviewParagraph = styled.p`
   color: white;
   padding: 20px;
 `;
+
+export const ReviewsNotFound = styled.p`
+  color: white;
+`;

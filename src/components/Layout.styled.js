@@ -65,6 +65,7 @@ export const Header = styled.header`
   height: 5em;
   padding: 2em 10%;
   background: linear-gradient(90deg, #121212, #333333, #525252);
+  width: 100%;
 
   color: #fff;
   display: block;

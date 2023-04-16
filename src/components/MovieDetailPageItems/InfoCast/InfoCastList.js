@@ -3,6 +3,7 @@ import {
   BoxAactors,
   ActorName,
   Character,
+  ActorsNotFound,
 } from './InfoCast.styled';
 import NotFound from 'img/NotFound.jpg';
 
@@ -31,5 +32,5 @@ export const InfoCastList = ({ detail }) => {
       </ListActors>
     );
   }
-  return <p>Actors not Found...</p>;
+  return <ActorsNotFound>Actors not Found...</ActorsNotFound>;
 };

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import Background from 'Img/Background.jpg';
+import Background from 'img/Background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -33,7 +33,7 @@ body {
   font-family: sans-serif;
   font-size: 1.2em;
   width: auto;
-  padding-right :10px;
+ 
 }
 
 img {  
